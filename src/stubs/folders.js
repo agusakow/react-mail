@@ -2,34 +2,23 @@ export default [
     {
         'id': 'inbox',
         'title': 'Inbox',
-        'messages': [ 1, 2, 3, 4, 5],
+        'messages': [ 1, 2, 3, 4, 5, 6, 7],
         'unreadedCount': 3,
         'subfolders': [
             {
                 'id': 'work',
-                'title': 'Work'
+                'title': 'Work',
+                'messages': [41]
             },
             {
                 'id': 'tracker',
-                'title': 'Tracker'
+                'title': 'Tracker',
+                'messages': [31, 32, 33, 34]
             },
             {
                 'id': 'important',
                 'title': 'Importnat',
-                'subfolders': [
-                    {
-                        'id': 'work1',
-                        'title': 'Work'
-                    },
-                    {
-                        'id': 'tracker1',
-                        'title': 'Tracker'
-                    },
-                    {
-                        'id': 'important1',
-                        'title': 'Importnat'
-                    }
-                ]
+                'messages': []
             }
         ]
     },
