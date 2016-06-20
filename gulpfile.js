@@ -15,11 +15,11 @@ gulp.task('devserver', function() {
 });
 
 gulp.task('clean', function() {
-    gulp.src('./dist/*', {read: false})
+    gulp.src('./dist/*')
         .pipe(clean());
 });
 
-gulp.task('copy', function() {
+gulp.task('copy', [], function() {
     gulp.src(['./src/*.html', './src/**/*.{woff,otf,svg}'])
         .pipe(gulp.dest('./dist'));
 });
@@ -44,4 +44,4 @@ gulp.task('watch', function() {
     gulp.watch('./src/**/*.html', ['copy']);
 });
 
-gulp.task('build', ['clean', 'copy', 'js', 'css', 'watch', 'devserver']);
+gulp.task('build', ['copy', 'js', 'css', 'watch', 'devserver']);
