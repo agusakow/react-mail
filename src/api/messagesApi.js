@@ -3,12 +3,15 @@ import folders from '../stubs/folders';
 import messages from '../stubs/messages';
 import palette from '../js/palette';
 
+var _folders = [];
+
 /**
  * Init stubs, settings message's folderId, color.
  * @param {Array} folders to init
  */
 var initStubs = (folders) => {
     for (let folder of folders) {
+        _folders.push(folder);
         if (!folder.messages) {
             continue;
         }
@@ -28,7 +31,7 @@ initStubs(folders);
 class MessagesApi extends Api {
     getByFolder(folderId) {
         return this.get().then(() => {
-            var folder = folders.find(folder => folder.id == folderId);
+            var folder = _folders.find(folder => folder.id == folderId);
             if (!folder) {
                 return { messages: [], folderId: -1 }
             }
