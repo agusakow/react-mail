@@ -1,3 +1,7 @@
+### Demo
+
+[https://agusakow.github.io](https://agusakow.github.io)
+
 ### How to
 
 Using [npm](https://www.npmjs.com/):
@@ -8,7 +12,7 @@ Build & start dev server:
 
     $ guil build
 
-Site will be available on the http://localhost:8080/
+Site will be available at the http://localhost:8080/
 
 ### Tests
 
