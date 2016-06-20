@@ -1,0 +1,23 @@
+$icons = \
+search
+
+.icon {
+    for icon in $icons {
+        &_{icon} {
+            background-image: url('./blocks/icon/' + icon + '.svg');
+        }
+    }
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+
+    &_hover {
+        cursor: pointer;
+        opacity: 0.4;
+        transition-m(opacity .15s ease-out);
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

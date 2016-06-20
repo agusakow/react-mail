@@ -1,0 +1,80 @@
+$folder-height = 30px
+$folder-padding = 30px
+
+.folder {
+    position: relative;
+    list-style-type: none;
+
+    & .link {
+        position: relative;
+        display: block;
+        font: $font;
+        line-height: $folder-height;
+        padding: 0 10px 0 $folder-padding;
+
+        no-wrap()
+
+        transition-m(color .15s ease-out \, background .15s ease-out);
+
+        for level in (1..5) {
+            .folders_level-{level} & {
+                padding-left: $folder-padding + level * 15;
+            }
+        }
+
+        &:hover {
+            //background: #f3faff;
+            background: rgba(3, 151, 222, 0.08);
+        }
+    }
+
+    &_selected {
+        &:before {
+            content: ' ';
+            display: block;
+            width: 3px;
+            height: $folder-height;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $foreground-active;
+        }
+    }
+
+    &_selected > .link,
+    & .link:hover {
+        color: $foreground-active !important;
+    }
+
+    &__arrow {
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        border: 3px solid $foreground;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        transition-m(transform .15s ease-out);
+        transform-m(rotate(-45deg));
+        transform-origin-m(75% 75%);
+    }
+
+    &__arrow-wrapper {
+        position: absolute;
+        left: 4px;
+        top: 1px;
+        padding: 10px;
+        line-height: 0;
+        cursor: pointer;
+    }
+
+    &__unreaded {
+        font: $font-h5;
+        color: $foreground-active;
+        margin: 0 4px;
+        vertical-align: super;
+    }
+
+    &_expanded > &__arrow-wrapper &__arrow {
+        transform-m(rotate(45deg));
+    }
+}

@@ -1,0 +1,67 @@
+.header {
+    position: relative;
+    height: $header-height;
+
+    border-bottom: 1px solid $foreground-active;
+
+    &__left {
+        display: inline-block;
+        position: absolute;
+        left 0;
+        top: 0;
+        line-height: $header-height;
+        padding: 0 30px;
+    }
+
+    &__center {
+        display: block;
+        text-align: center;
+        line-height: $header-height;
+    }
+
+    &__logo {
+        color: $foreground;
+        font: $font-h2;
+        font-family: Textbook,'Textbook New Light', $font-family;
+    }
+
+    &__search-wrapper {
+        position: relative;
+        display: inline-block;
+        line-height: initial;
+        & .icon {
+            position: absolute;
+            right: 0;
+            top: 4px;
+        }
+    }
+
+    &__search {
+        width: 200px;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid $border-pale;
+        font: $font-h3;
+        color: $foreground;
+        padding: 5px 24px 5px 8px;
+        transition-m(border-color .3s ease-out);
+
+        &:active,
+        &:focus {
+            border-color: $border;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $foreground-muted;
+        }
+        &::-moz-placeholder {
+            color: $foreground-muted;
+        }
+        &:-moz-placeholder {
+            color: $foreground-muted;
+        }
+        &:-ms-input-placeholder {
+            color: $foreground-muted;
+        }
+    }
+}

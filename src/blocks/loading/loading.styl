@@ -1,0 +1,113 @@
+$loading-spinner-width = 40px
+$loading-spinner-height = 40px
+
+.loading {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: $header-height;
+    bottom: 0;
+    background: rgba(255,255,255, 0.9);
+
+    z-index: 1;
+    animation-m(loading-show .3s ease-in-out);
+
+    &_hidden {
+        visibility: hidden;
+        animation-m(loading-hide .3s ease-in-out);
+    }
+
+    &__spinner {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-left: (- $loading-spinner-width / 2);
+        margin-top: (- $loading-spinner-height / 2) - $header-height;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+
+    &__spinner-item {
+        width: 33%;
+        height: 33%;
+        background-color: #02b0c1;
+        float: left;
+        animation-m(loading-scale 1.3s infinite ease-in-out);
+    }
+    &__spinner-item_1 {
+        animation-delay-m(0.2s);
+    }
+    &__spinner-item_2 {
+        animation-delay-m(0.3s);
+    }
+    &__spinner-item_3 {
+        animation-delay-m(0.4s);
+    }
+    &__spinner-item_4 {
+        animation-delay-m(0.1s);
+    }
+    &__spinner-item_5 {
+        animation-delay-m(0.2s);
+    }
+    &__spinner-item_6 {
+        animation-delay-m(0.3s);
+    }
+    &__spinner-item_7 {
+        animation-delay-m(0s);
+    }
+    &__spinner-item_8 {
+        animation-delay-m(0.1s);
+    }
+    &__spinner-item_9 {
+        animation-delay-m(0.2s);
+    }
+}
+
+@-webkit-keyframes loading-scale {
+    0%, 70%, 100% {
+        transform-m(scale3D(1, 1, 1));
+    } 35% {
+        transform-m(scale3D(0, 0, 1));
+    }
+}
+
+@keyframes loading-scale {
+    0%, 70%, 100% {
+        transform-m(scale3D(1, 1, 1));
+    } 35% {
+        transform-m(scale3D(0, 0, 1));
+    }
+}
+
+@keyframes loading-show {
+    0% {
+        visibility: hidden;
+        height: auto;
+        opacity: 0;
+    } 1% {
+        visibility: visible;
+        height: auto;
+        opacity: 0;
+    } 100% {
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+    }
+}
+
+@keyframes loading-hide {
+    0% {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+    } 99% {
+        height: auto;
+        visibility: visible;
+        opacity: 0;
+    } 100% {
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+}

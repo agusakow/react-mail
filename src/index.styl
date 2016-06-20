@@ -1,0 +1,44 @@
+@import "blocks/vars/*.styl";
+@import "blocks/!(vars)/*.styl";
+@import "pages/**/*.styl";
+
+@font-face {
+    font-family: "TextBook";
+    src: url(/assets/fonts/textbook.woff) format("woff"), url(/assets/fonts/textbook.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { outline: 0; padding: 0; margin: 0; border: 0; }
+html,
+body,
+.root,
+.root-wrapper,
+.main {
+    height: 100%;
+}
+
+html {
+    font: $font;
+    color: $foreground;
+}
+
+body {
+    overflow: hidden;
+}
+
+.root {
+    position: relative;
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.main {
+    padding-top: $header-height + 12px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,57 @@
+.message {
+    list-style-type: none;
+    border: 0px solid $border-pale;
+    border-top-width: 1px;
+
+    &,
+    &__date {
+        line-height: 30px;
+    }
+
+    &:last-child {
+        border-bottom-width: 1px;
+    }
+
+    &:hover {
+        background: $border-pale;
+    }
+
+    & .link {
+        display: block;
+        position: relative;
+        padding: 2px 100px 2px 16px;
+    }
+
+    &__from {
+        display: inline-block;
+        width: 150px;
+        padding-left: 10px;
+    }
+
+    &__preview {
+        color: $foreground-muted;
+        padding-left: 10px;
+    }
+
+    &__date {
+        display: inline-block;
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 2px;
+        text-align: right;
+        margin-right: 16px;
+    }
+
+    & .link,
+    &__from {
+        no-wrap();
+    }
+
+    & .avatar,
+    &__from,
+    &__date,
+    &__title-wrapper {
+        vertical-align: middle;
+    }
+}

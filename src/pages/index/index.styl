@@ -1,0 +1,21 @@
+$pageIndexFoldersWidth = 200px
+
+.page-index {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    &__main {
+        padding-left: $pageIndexFoldersWidth;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    &__folders {
+        width: $pageIndexFoldersWidth;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
