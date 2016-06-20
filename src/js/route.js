@@ -1,3 +1,4 @@
+import Page500 from '../pages/500/500.jsx';
 import appActions from '../actions/appActions';
 
 export default class {
@@ -12,6 +13,10 @@ export default class {
         this.fetch(nextState).then(() => {
             self.setLoading(false);
             callback(null, self.component);
+        }, (error) => {
+            self.setLoading(false);
+            self.setCurrentPage(nextState, error);
+            callback(null, Page500);
         });
     }
 
@@ -31,12 +36,13 @@ export default class {
         }
     }
 
-    setCurrentPage(nextState) {
+    setCurrentPage(nextState, error) {
         appActions.setCurrentPage({
             name: this.name,
-            path: nextState.pathname,
+            path: nextState.location.pathname,
+            query: nextState.location.query,
             params: nextState.params,
-            query: nextState.query
+            error: error
         });
     }
 }
