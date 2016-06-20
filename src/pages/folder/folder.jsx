@@ -33,12 +33,26 @@ export default class Folder extends Page {
     }
 
     getDom() {
-        var messages = this.state.messages.map(message =>
-            <Message message={message} key={message.id}/>
-        );
+        var className = 'page page-folder';
+        var messages;
+        var emptyMsg;
+        var isEmpty = !this.state.messages || !this.state.messages.length;
+        if (isEmpty) {
+            emptyMsg = (
+                <div>
+                    This folder is empty...
+                </div>
+            );
+            className += ' page-folder_empty';
+        } else {
+            messages = this.state.messages.map(message =>
+                <Message message={message} key={message.id}/>
+            );
+        }
 
         return (
-            <div className="page page-folder">
+            <div className={className}>
+                {emptyMsg}
                 <ul class="page-folder__messages">
                     {messages}
                 </ul>
