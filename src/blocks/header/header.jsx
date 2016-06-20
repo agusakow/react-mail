@@ -9,6 +9,7 @@ export default class Header extends React.Component{
         this.state = this.getState();
         this.onKeyPress = this.onKeyPress.bind(this);
         this.onSearchClick = this.onSearchClick.bind(this);
+        this.onLogoClick = this.onLogoClick.bind(this);
         this.onStoreChange = this.onStoreChange.bind(this);
         this.onInputChange = this.onInputChange.bind(this);
         appStore.on(events.CHANGE, this.onStoreChange);
@@ -33,6 +34,10 @@ export default class Header extends React.Component{
         browserHistory.push(`/search?text=${value}`);
     }
 
+    onLogoClick() {
+        browserHistory.push('/');
+    }
+
     onStoreChange() {
         this.setState(this.getState());
     }
@@ -52,8 +57,9 @@ export default class Header extends React.Component{
         return (
             <div className="header">
                 <span className="header__left">
-                    <span className="header__logo">
-                        Mail
+                    <span className="header__logo"
+                        onClick={this.onLogoClick}>
+                        Mailbox
                     </span>
                 </span>
                 <span className="header__center">
@@ -72,8 +78,4 @@ export default class Header extends React.Component{
             </div>
         );
     }
-};
-
-Header.contextTypes = {
-  router: React.PropTypes.func.isRequired
 };

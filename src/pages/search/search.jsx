@@ -35,7 +35,7 @@ export default class Search extends Page {
         );
 
         return (
-            <div className="page-search">
+            <div className="page page-search">
                 <ul class="messages">
                     {messages}
                 </ul>

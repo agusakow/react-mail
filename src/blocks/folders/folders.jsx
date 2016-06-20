@@ -35,7 +35,7 @@ export default class Folders extends React.Component {
         var className = `folders folders_${level ? 'child' : 'root'}`;
         if (this.props.folders) {
             folders = this.props.folders.map(folder => (
-                <Folder folder={folder} level={this.props.level}/>
+                <Folder folder={folder} level={this.props.level} key={folder.id}/>
             ));
         }
         if (typeof level == 'number') {

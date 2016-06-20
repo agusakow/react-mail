@@ -2,7 +2,9 @@
     position: relative;
     height: $header-height;
 
-    border-bottom: 1px solid $foreground-active;
+    //border-bottom: 1px solid $foreground-active;
+    box-shadow: 0px 2px 6px 0 rgba(22,22,22,0.08);
+    z-index: 1;
 
     &__left {
         display: inline-block;
@@ -21,8 +23,13 @@
 
     &__logo {
         color: $foreground;
-        font: $font-h2;
+        font: $font-h4;
         font-family: Textbook,'Textbook New Light', $font-family;
+        font-weight: bold;
+        letter-spacing: 4px;
+        vertical-align: sub;
+        text-transform: uppercase;
+        cursor: pointer;
     }
 
     &__search-wrapper {
@@ -53,15 +60,19 @@
 
         &::-webkit-input-placeholder {
             color: $foreground-muted;
+            font-size: 15px;
         }
         &::-moz-placeholder {
             color: $foreground-muted;
+            font-size: 15px;
         }
         &:-moz-placeholder {
             color: $foreground-muted;
+            font-size: 15px;
         }
         &:-ms-input-placeholder {
             color: $foreground-muted;
+            font-size: 15px;
         }
     }
 }

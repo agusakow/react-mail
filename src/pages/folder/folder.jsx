@@ -1,6 +1,7 @@
 import React from 'react';
 import Page from '../../js/page';
 import Message from '../../blocks/message/message.jsx';
+
 import messagesStore from '../../stores/folderMessagesStore';
 import messagesActions from '../../actions/messagesActions';
 import foldersActions from '../../actions/foldersActions';
@@ -33,13 +34,15 @@ export default class Folder extends Page {
 
     getDom() {
         var messages = this.state.messages.map(message =>
-            <Message message={message}/>
+            <Message message={message} key={message.id}/>
         );
 
         return (
-            <ul class="messages">
-                {messages}
-            </ul>
+            <div className="page page-folder">
+                <ul class="page-folder__messages">
+                    {messages}
+                </ul>
+            </div>
         );
     }
 };

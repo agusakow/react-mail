@@ -27,9 +27,10 @@ export default class Loading extends React.Component {
     render() {
         var className = "loading";
         var items = [];
-        for (var i = 1; i < 10; i++) {
+        for (var i = 1; i <= 5; i++) {
             items.push(
-                <span className={`loading__spinner-item loading__spinner-item_${i}`}>
+                <span key={i}
+                    className={`loading__spinner-item loading__spinner-item_${i}`}>
                 </span>
             );
         }

@@ -4,10 +4,16 @@ import Avatar from '../avatar/avatar.jsx';
 
 export default class Message extends React.Component {
     render() {
+        var className = 'message';
         var message = this.props.message;
         var date = (new Date(message.date)).toLocaleDateString();
+        var point;
+        if (message.unreaded) {
+            className += ' message_unreaded';
+            point = <span className="message__point"/>
+        }
         return (
-            <li className="message" key={message.id}>
+            <li className={className} key={message.id}>
                 <Link to={`/message/${message.id}`}>
                     <Avatar login={message.from} color={message.color} />
                     <span className="message__from">

@@ -2,6 +2,7 @@ $avatar-size = 30px
 $avatar-size-L = 45px
 
 .avatar {
+    position: relative;
     font: $font-h3;
     color: #fff;
     display: inline-block;
@@ -12,10 +13,21 @@ $avatar-size-L = 45px
     vertical-align: middle;
     border-radius: 50%;
     text-transform: capitalize;
+    overflow: hidden;
 
     &_size_L {
         width: $avatar-size-L;
         height: $avatar-size-L;
         line-height: $avatar-size-L;
+    }
+
+    &__mask {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: -webkit-radial-gradient(ellipse at center, rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.15) 100%)
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.15) 100%)
     }
 }

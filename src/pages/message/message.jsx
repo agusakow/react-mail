@@ -38,7 +38,7 @@ export default class Message extends Page {
     getDom() {
         var message = this.state.message || {};
         return (
-            <div className="page-message">
+            <div className="page page-message">
                 <div className="page-message__header">
                     <Avatar size="L"
                         login={message.from}

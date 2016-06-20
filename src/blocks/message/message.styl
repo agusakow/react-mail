@@ -3,6 +3,13 @@
     border: 0px solid $border-pale;
     border-top-width: 1px;
 
+    &_unreaded {
+        & .message__title,
+        & .message__from {
+            font-weight: bold;
+        }
+    }
+
     &,
     &__date {
         line-height: 30px;
@@ -13,7 +20,7 @@
     }
 
     &:hover {
-        background: $border-pale;
+        background: $background-pale;
     }
 
     & .link {
@@ -41,6 +48,17 @@
         top: 2px;
         text-align: right;
         margin-right: 16px;
+    }
+
+    &__point {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        position: absolute;
+        left: 4px;
+        top: 14px;
+        background: $foreground-active;
     }
 
     & .link,

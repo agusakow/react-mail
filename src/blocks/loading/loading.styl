@@ -1,11 +1,11 @@
-$loading-spinner-width = 40px
-$loading-spinner-height = 40px
+$loading-spinner-width = 70px
+$loading-spinner-height = 60px
 
 .loading {
     position: fixed;
     left: 0;
     right: 0;
-    top: $header-height;
+    top: $header-height + 1px;
     bottom: 0;
     background: rgba(255,255,255, 0.9);
 
@@ -19,8 +19,9 @@ $loading-spinner-height = 40px
 
     &__spinner {
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: $loading-spinner-width;
+        height: $loading-spinner-height;
+        text-align: center;
         margin-left: (- $loading-spinner-width / 2);
         margin-top: (- $loading-spinner-height / 2) - $header-height;
         position: absolute;
@@ -29,55 +30,44 @@ $loading-spinner-height = 40px
     }
 
     &__spinner-item {
-        width: 33%;
-        height: 33%;
-        background-color: #02b0c1;
-        float: left;
-        animation-m(loading-scale 1.3s infinite ease-in-out);
+        display: inline-block;
+        height: 100%;
+        width: 8px;
+        margin: 0 3px 0 0;
+        background-color: $border;
+
+        -webkit-animation: loading-stretch 0.8s infinite ease-in-out;
+        animation: loading-stretch 0.8s infinite ease-in-out;
     }
-    &__spinner-item_1 {
-        animation-delay-m(0.2s);
-    }
+
     &__spinner-item_2 {
-        animation-delay-m(0.3s);
+        animation-delay-m(-0.7s);
     }
     &__spinner-item_3 {
-        animation-delay-m(0.4s);
+        animation-delay-m(-0.6s);
     }
     &__spinner-item_4 {
-        animation-delay-m(0.1s);
+        animation-delay-m(-0.5s);
     }
     &__spinner-item_5 {
-        animation-delay-m(0.2s);
-    }
-    &__spinner-item_6 {
-        animation-delay-m(0.3s);
-    }
-    &__spinner-item_7 {
-        animation-delay-m(0s);
-    }
-    &__spinner-item_8 {
-        animation-delay-m(0.1s);
-    }
-    &__spinner-item_9 {
-        animation-delay-m(0.2s);
+        animation-delay-m(-0.4s);
     }
 }
 
-@-webkit-keyframes loading-scale {
-    0%, 70%, 100% {
-        transform-m(scale3D(1, 1, 1));
-    } 35% {
-        transform-m(scale3D(0, 0, 1));
-    }
+@-webkit-keyframes loading-stretch {
+  0%, 40%, 100% {
+      transform-m(scaleY(0.5));
+  } 20% {
+      transform-m(scaleY(1.0));
+  }
 }
 
-@keyframes loading-scale {
-    0%, 70%, 100% {
-        transform-m(scale3D(1, 1, 1));
-    } 35% {
-        transform-m(scale3D(0, 0, 1));
-    }
+@keyframes loading-stretch {
+  0%, 40%, 100% {
+      transform-m(scaleY(0.5));
+  } 20% {
+      transform-m(scaleY(1.0));
+  }
 }
 
 @keyframes loading-show {

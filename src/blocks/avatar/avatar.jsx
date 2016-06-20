@@ -5,7 +5,7 @@ export default class extends React.Component{
         var className="avatar";
         var char = this.props.login ? this.props.login[0] : "";
         var style = {
-            'background-color': this.props.color
+            'backgroundColor': this.props.color
         };
         if (this.props.size) {
             className += ` avatar_size_${this.props.size}`;
@@ -13,6 +13,7 @@ export default class extends React.Component{
         return (
             <span className={className} style={style}>
                 {char}
+                <span className="avatar__mask"/>
             </span>
         );
     }

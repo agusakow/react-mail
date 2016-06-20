@@ -1,6 +1,8 @@
 import React from 'react';
 import Page from '../../js/page';
 import Folders from '../../blocks/folders/folders.jsx';
+import Bar from '../../blocks/bar/bar.jsx';
+
 import foldersStore from '../../stores/foldersStore';
 import foldersActions from '../../actions/foldersActions';
 import { events } from '../../js/consts';
@@ -30,11 +32,12 @@ export default class Index extends Page {
 
     getDom() {
         return (
-            <div className="page-index">
+            <div className="page page-index">
                 <div className="page-index__folders">
                     <Folders folders={this.state.folders} level={0}/>
                 </div>
                 <div className="page-index__main">
+                    <Bar />
                     {this.props.children}
                 </div>
             </div>
