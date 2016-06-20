@@ -29,6 +29,9 @@ class MessagesApi extends Api {
     getByFolder(folderId) {
         return this.get().then(() => {
             var folder = folders.find(folder => folder.id == folderId);
+            if (!folder) {
+                return { messages: [], folderId: -1 }
+            }
             var folderMessages = messages.filter(
                 message => folder.messages.indexOf(message.id) != -1
             );
