@@ -30,12 +30,26 @@ export default class Search extends Page {
     }
 
     getDom() {
-        var messages = this.state.messages.map(message =>
-            <Message message={message}/>
-        );
+        var className = 'page page-search';
+        var messages;
+        var emptyMsg;
+        var isEmpty = !this.state.messages || !this.state.messages.length;
+        if (isEmpty) {
+            emptyMsg = (
+                <div>
+                    Nothing found...
+                </div>
+            );
+            className += ' page-search_empty';
+        } else {
+            messages = this.state.messages.map(message =>
+                <Message message={message} key={message.id}/>
+            );
+        }
 
         return (
-            <div className="page page-search">
+            <div className={className}>
+                {emptyMsg}
                 <ul class="messages">
                     {messages}
                 </ul>

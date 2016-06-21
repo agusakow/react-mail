@@ -11,7 +11,7 @@ class SearchRoute extends Route {
     }
 
     fetch(nextState) {
-        return messagesActions.find(nextState.query.text);
+        return messagesActions.find(nextState.location.query.text);
     }
 }
 
